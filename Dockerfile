@@ -13,7 +13,7 @@ RUN make clean && make
 
 FROM alpine:latest
 MAINTAINER Paul Novarese pvn@novarese.net
-LABEL name="solunar-exporter"
+LABEL name="solunar-demo"
 LABEL maintainer="pvn@novarese.net"
 
 HEALTHCHECK --timeout=10s CMD /bin/date || exit 1
@@ -22,5 +22,5 @@ COPY --from=builder /solunar_cmdline/solunar solunar
 RUN apk add -U tzdata bash && cp /usr/share/zoneinfo/America/Chicago /etc/localtime
 
 USER 65534:65534
+CMD ["-c", "London"]
 ENTRYPOINT ["/usr/local/bin/solunar"]
-CMD ["-c" "London"]
