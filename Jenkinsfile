@@ -33,7 +33,7 @@ pipeline {
       steps {
         script {
           docker.withRegistry('https://' + registry, registryCredential) {
-            def timeStamp = Calendar.getInstance().getTime().format('YYYYMMdd-hhmmss',TimeZone.getTimeZone('CST'))
+            def timeStamp = Calendar.getInstance().getTime().format('YYYYMMdd-HHmmss',TimeZone.getTimeZone('CST'))
             def image = docker.build(repository + ':prod-' + timeStamp)
             image.push()  
           }
