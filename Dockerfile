@@ -21,6 +21,5 @@ WORKDIR /usr/local/bin/
 COPY --from=builder /solunar_cmdline/solunar solunar
 RUN apk add -U tzdata bash && cp /usr/share/zoneinfo/America/Chicago /etc/localtime
 
-USER 65534:65534
 CMD ["-c", "London"]
 ENTRYPOINT ["/usr/local/bin/solunar"]
