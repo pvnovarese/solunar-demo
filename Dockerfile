@@ -5,7 +5,7 @@ ARG ARCH=amd64
 FROM alpine:latest as builder
 
 WORKDIR /solunar_cmdline
-RUN apk update && apk add --no-cache git g++ make
+RUN apk update && apk add --no-cache git g++ make curl
 
 # Clone private repository
 RUN git clone https://github.com/kevinboone/solunar_cmdline.git /solunar_cmdline
@@ -23,4 +23,4 @@ RUN apk add -U tzdata bash && cp /usr/share/zoneinfo/America/Chicago /etc/localt
 
 USER 65534:65534
 ENTRYPOINT ["/usr/local/bin/solunar"]
-CMD ["-C London"]
+CMD ["-C" "London"]
