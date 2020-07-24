@@ -36,8 +36,8 @@ pipeline {
             def timeStamp = Calendar.getInstance().getTime().format('YYYYMMdd-HHmmss',TimeZone.getTimeZone('CST'))
             def image = docker.build(repository + ':prod-' + timeStamp)
             image.push()  
-            def image = docker.build(repository + ':latest')
-            image.push()  
+            def imageLatest = docker.build(repository + ':latest')
+            imageLatest.push()  
 
           }
         }
