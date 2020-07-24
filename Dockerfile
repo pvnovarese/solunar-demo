@@ -23,4 +23,4 @@ RUN apk add -U tzdata bash && cp /usr/share/zoneinfo/America/Chicago /etc/localt
 
 USER 65534:65534
 ENTRYPOINT ["/usr/local/bin/solunar"]
-CMD ["-C" "London"]
+CMD ["-c" "London"]
