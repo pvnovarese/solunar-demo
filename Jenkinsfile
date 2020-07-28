@@ -3,7 +3,7 @@ pipeline {
     registry = 'registry.hub.docker.com'
     registryCredential = 'docker-hub'
     repository = 'pvnovarese/solunar-demo'
-    imageLine = 'pvnovarese/solunar-demo:dev'
+    imageLine = 'pvnovarese/solunar-demo:dev Dockerfile'
   }
   agent any
   stages {
